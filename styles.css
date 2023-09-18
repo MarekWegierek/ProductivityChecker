@@ -1,0 +1,134 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  --primary-color: #28a745;
+  --secondary-color: white;
+  --background-color: #333;
+  --border-color-1: black;
+  --border-color-2: black;
+  --border-radius-main: 15px;
+}
+
+body {
+  background-color: var(--background-color);
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+/*Header*/
+
+header {
+  height: 50px;
+  width: 100vw;
+  background-color: var(--primary-color);
+  border: 5px solid black;
+  border-radius: 25px;
+}
+
+.currentDay {
+  text-align: center;
+  color: white;
+}
+
+/*Main*/
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*Carousel*/
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+
+.carousel-card {
+  height: 300px;
+  width: 200px;
+  background-color: var(--secondary-color);
+  border: 5px solid grey;
+  border-radius: 15px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.carousel-card ul li {
+  display: inline-block;
+}
+
+.card0-list-timeStamp {
+  text-align: left;
+  width: 25%;
+}
+.card0-list-timeDone {
+  text-align: right;
+  width: 75%;
+}
+
+/*StopWatch*/
+
+.stopwatch {
+  margin-top: 2rem;
+  padding: 15px;
+  height: 400px;
+  width: 70vw;
+  border: 5px solid black;
+  border-radius: var(--border-radius-main);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column: 1fr 1fr;
+  grid-template-areas:
+    "current-time current-time"
+    "playAndStopBtns sendInput";
+}
+
+.time-display {
+  grid-area: current-time;
+  margin: 5px;
+  border: 5px solid var(--border-color-1);
+  border-radius: var(--border-radius-main);
+  background-color: var(--secondary-color);
+  display: grid;
+  place-items: center;
+  font-size: 5rem;
+}
+
+.playAndStopBtns {
+  grid-area: playAndStopBtns;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.sendInput {
+  grid-area: sendInput;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.icon {
+  height: 3rem;
+  width: 3rem;
+}
+
+.invisible {
+  visibility: hidden;
+  position: absolute;
+}
