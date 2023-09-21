@@ -182,6 +182,10 @@ main {
   position: absolute;
 }
 
-#ass-p {
-  color: white;
+/* Other Options */
+
+.other-options {
+  margin: 15px;
+  display: flex;
+  gap: 15px;
 }
