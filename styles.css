@@ -53,29 +53,62 @@ main {
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
+  scrollbar-width: none;
+  margin-top: 1rem;
+  gap: 1rem;
 }
 
 .carousel-card {
   height: 300px;
-  width: 200px;
+  width: 250px;
   background-color: var(--secondary-color);
   border: 5px solid grey;
   border-radius: 15px;
-  margin: 5px;
   display: flex;
   flex-direction: column;
-}
-.carousel-card ul li {
-  display: inline-block;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 5px;
 }
 
-.card0-list-timeStamp {
-  text-align: left;
-  width: 25%;
+.card0-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
 }
-.card0-list-timeDone {
-  text-align: right;
-  width: 75%;
+
+.card0-list-desc {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.card0-list {
+  width: 100%;
+  flex-direction: column;
+  overflow: auto;
+  scrollbar-width: none;
+  border: 1px solid black;
+}
+.card0-list li {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 1.5rem;
+}
+
+/*Import-Export Area*/
+
+.import-export {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+  width: 30vw;
 }
 
 /*StopWatch*/
@@ -85,6 +118,7 @@ main {
   padding: 15px;
   height: 400px;
   width: 70vw;
+  max-width: 600px;
   border: 5px solid black;
   border-radius: var(--border-radius-main);
   display: grid;
@@ -92,7 +126,7 @@ main {
   grid-column: 1fr 1fr;
   grid-template-areas:
     "current-time current-time"
-    "playAndStopBtns sendInput";
+    "playPauseBtns sendInput";
 }
 
 .time-display {
@@ -106,13 +140,20 @@ main {
   font-size: 5rem;
 }
 
-.playAndStopBtns {
-  grid-area: playAndStopBtns;
+.playPauseBtns {
+  grid-area: playPauseBtns;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 15px;
+  padding-top: 19px;
 }
+
+.playPauseBtns p {
+  color: var(--secondary-color);
+}
+
+/*StopWatch Send Form*/
 
 .sendInput {
   grid-area: sendInput;
@@ -123,12 +164,24 @@ main {
   gap: 5px;
 }
 
+.sendBtn {
+  width: 100%;
+}
+
+.form-control {
+  text-align: center;
+}
+
 .icon {
-  height: 3rem;
-  width: 3rem;
+  height: 5rem;
+  width: 5rem;
 }
 
 .invisible {
   visibility: hidden;
   position: absolute;
+}
+
+#ass-p {
+  color: white;
 }
